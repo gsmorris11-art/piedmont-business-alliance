@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piedmont Business Alliance</title>
+<meta name="description" content="Piedmont Business Alliance connects homeowners across the Virginia Piedmont with local service businesses: HVAC, plumbing, electrical, roofing, paving, painting, lawn care, landscaping, tree work and seamless gutters.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout idea: one column of plain-spoken sections on a ridge-blue palette; the foothill horizon from the logo closes the hero. */
+:root{
+  --ground:#F4F6F5; --surface:#FFFFFF; --ink:#16293A; --muted:#4A5F70; --line:#D5DEE2;
+  --ridge:#2E5F80; --ridge-soft:#E2EDF1; --sun:#B67D12; --sun-soft:#FBF1DA;
+  --display:"Fraunces", Georgia, "Times New Roman", serif;
+  --body:"Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#0F1C28; --surface:#16293A; --ink:#EAF0F2; --muted:#A9BCC8; --line:#2A4155;
+    --ridge:#8FC0D8; --ridge-soft:#1C3447; --sun:#E0A93B; --sun-soft:#2C2614;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0F1C28; --surface:#16293A; --ink:#EAF0F2; --muted:#A9BCC8; --line:#2A4155;
+  --ridge:#8FC0D8; --ridge-soft:#1C3447; --sun:#E0A93B; --sun-soft:#2C2614;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.6 var(--body)}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.12;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.2rem,6.2vw,3.7rem);letter-spacing:-.015em}
+h2{font-size:clamp(1.6rem,3.6vw,2.2rem)}
+h3{font-size:1.2rem;font-family:var(--body);font-weight:700;line-height:1.3}
+p{margin:0;max-width:62ch}
+a{color:var(--ridge)}
+a:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:4px}
+.eyebrow{font:700 .78rem/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--ridge)}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px 28px;flex-wrap:wrap;padding-block:18px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand svg{flex:none}
+.brand .name{display:flex;flex-direction:column;gap:5px}
+.brand .name b{font:600 1.5rem/1 var(--display);letter-spacing:-.01em}
+.brand .name span{font:700 .64rem/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--ridge)}
+nav{display:flex;flex-wrap:wrap;gap:6px 22px}
+nav a{font-weight:600;text-decoration:none;color:var(--ink);padding-block:10px}
+nav a:hover{color:var(--ridge)}
+
+.hero{padding-block:44px 0;display:flex;flex-direction:column;gap:22px}
+.hero p.lede{font-size:1.2rem;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:8px;font-weight:700;text-decoration:none;background:var(--ink);color:var(--ground)}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.horizon{display:block;width:100%;height:auto;margin-top:36px}
+.horizon .sun{fill:var(--sun)} .horizon .far{fill:var(--ridge-soft)} .horizon .mid{fill:var(--ridge);opacity:.55} .horizon .near{fill:var(--ridge)}
+
+section{padding-block:56px 8px;display:flex;flex-direction:column;gap:24px}
+.intro{display:flex;flex-direction:column;gap:12px}
+.intro p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;border-top:2px solid var(--ink)}
+.grid article{padding:20px 22px 22px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.grid article p{color:var(--muted);font-size:1rem}
+
+.places{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
+.places li{background:var(--ridge-soft);color:var(--ink);border-radius:999px;padding:7px 16px;font-weight:600;font-size:.95rem}
+
+ol.steps{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+ol.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:8px}
+ol.steps li::before{content:counter(s);font:600 1.7rem/1 var(--display);color:var(--sun)}
+ol.steps p{color:var(--muted);font-size:1rem}
+
+dl.facts{margin:0;display:grid;grid-template-columns:minmax(120px,auto) 1fr;gap:0;border-top:1px solid var(--line)}
+dl.facts dt,dl.facts dd{margin:0;padding:14px 0;border-bottom:1px solid var(--line)}
+dl.facts dt{font-weight:700;padding-right:20px}
+dl.facts dd{color:var(--muted)}
+.todo{display:inline-block;border:1px dashed var(--sun);background:var(--sun-soft);color:var(--ink);border-radius:5px;padding:1px 8px;font-size:.95rem}
+
+.trades{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;list-style:none;margin:0;padding:0}
+.trades li{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--ridge);border-radius:8px;padding:14px 16px;font-weight:700}
+form.req{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+form.req .field{display:flex;flex-direction:column;gap:6px}
+form.req .wide{grid-column:1/-1}
+form.req label{font-weight:700;font-size:.95rem}
+form.req input,form.req select,form.req textarea{font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:8px;padding:12px;min-height:48px;width:100%}
+form.req textarea{min-height:110px;resize:vertical}
+form.req input:focus-visible,form.req select:focus-visible,form.req textarea:focus-visible{outline:3px solid var(--sun);outline-offset:1px}
+form.req button{font:inherit;font-weight:700;min-height:48px;padding:0 22px;border:0;border-radius:8px;background:var(--ink);color:var(--ground);cursor:pointer;justify-self:start}
+form.req button:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.notice{border:1px dashed var(--sun);background:var(--sun-soft);color:var(--ink);border-radius:8px;padding:12px 14px;font-size:.95rem}
+.notice[hidden]{display:none}
+
+.join{margin-top:56px;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--sun);border-radius:12px;padding:30px;display:flex;flex-direction:column;gap:16px}
+.join p{color:var(--muted)}
+
+footer{margin-top:44px;padding-block:24px 48px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+footer p{max-width:none}
+@media (max-width:560px){
+  dl.facts{grid-template-columns:1fr}
+  dl.facts dt{border-bottom:0;padding-bottom:0}
+  dl.facts dd{padding-top:4px}
+  .grid article{padding-right:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <a class="brand" href="#top" id="top" aria-label="Piedmont Business Alliance, home">
+      <svg width="52" height="52" viewBox="0 0 200 200" aria-hidden="true">
+        <defs><clipPath id="mk"><circle cx="100" cy="100" r="96"></circle></clipPath></defs>
+        <g clip-path="url(#mk)">
+          <rect x="0" y="0" width="200" height="200" fill="#16293A"></rect>
+          <circle cx="130" cy="92" r="26" fill="#E0A93B"></circle>
+          <path d="M0 118 C 28 96, 54 90, 80 106 C 100 118, 122 88, 150 96 C 172 102, 188 114, 200 108 L200 200 L0 200 Z" fill="#2E5F80"></path>
+          <path d="M0 144 C 28 126, 54 120, 86 136 C 112 149, 138 120, 168 128 C 184 132, 194 140, 200 138 L200 200 L0 200 Z" fill="#5C93AD"></path>
+          <path d="M0 172 C 40 152, 80 152, 120 165 C 150 175, 180 169, 200 160 L200 200 L0 200 Z" fill="#C6DCE0"></path>
+        </g>
+        <circle cx="100" cy="100" r="96" fill="none" stroke="#8FC0D8" stroke-width="3"></circle>
+      </svg>
+      <span class="name"><b>Piedmont</b><span>Business Alliance</span></span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#request">Find a pro</a>
+      <a href="#trades">Trades</a>
+      <a href="#members">For businesses</a>
+      <a href="#meetings">Meetings</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <span class="eyebrow">Local service businesses · Virginia Piedmont</span>
+      <h1>Local trades you can trust for the work your home needs</h1>
+      <p class="lede">Piedmont Business Alliance is a nonprofit group of locally owned service businesses in the foothill counties. Tell us what you need done and we will connect you with a member who does that work near you.</p>
+      <div class="actions">
+        <a class="btn" href="#request">Find a local pro</a>
+        <a class="btn alt" href="#members">Join as a service business</a>
+      </div>
+      <svg class="horizon" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true">
+        <circle class="sun" cx="720" cy="74" r="34"></circle>
+        <path class="far" d="M0 84 C 120 44, 230 40, 350 70 C 450 94, 560 40, 700 58 C 820 72, 920 96, 1000 80 L1000 150 L0 150 Z"></path>
+        <path class="mid" d="M0 108 C 130 78, 260 72, 400 98 C 520 118, 660 76, 800 90 C 890 98, 960 110, 1000 106 L1000 150 L0 150 Z"></path>
+        <path class="near" d="M0 134 C 180 108, 380 110, 580 126 C 740 138, 890 130, 1000 118 L1000 150 L0 150 Z"></path>
+      </svg>
+    </div>
+
+    <section id="trades">
+      <div class="intro">
+        <span class="eyebrow">Trades</span>
+        <h2>Ten trades, one place to ask</h2>
+        <p>Our members cover the jobs homeowners call about most.</p>
+      </div>
+      <ul class="trades">
+        <li>HVAC</li><li>Plumbing</li><li>Electrical</li><li>Roofing</li><li>Paving</li><li>Painting</li><li>Lawn care</li><li>Landscaping</li><li>Tree work</li><li>Seamless gutters</li>
+      </ul>
+    </section>
+
+    <section id="how">
+      <div class="intro">
+        <span class="eyebrow">For homeowners</span>
+        <h2>How it works</h2>
+        <p>There is no charge to homeowners for asking.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Tell us the job</h3><p>Pick the trade, describe the work and say which town you are in.</p></li>
+        <li><h3>Get connected</h3><p>We pass your request to a member business that does that work in your area.</p></li>
+        <li><h3>Hire directly</h3><p>The business contacts you, quotes the job and works for you. You deal with a neighbor, not a call center.</p></li>
+      </ol>
+    </section>
+
+    <div class="join" id="request">
+      <span class="eyebrow">Find a pro</span>
+      <h2>Request a local service business</h2>
+      <p>Fill this in and a member business will get back to you.</p>
+      <form class="req" id="req-form" novalidate>
+        <div class="field"><label for="req-name">Your name</label><input id="req-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="req-phone">Phone</label><input id="req-phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div class="field"><label for="req-town">Town or county</label><input id="req-town" name="town" autocomplete="address-level2" required></div>
+        <div class="field"><label for="req-trade">Trade needed</label>
+          <select id="req-trade" name="trade" required>
+            <option value="">Choose a trade</option>
+            <option>HVAC</option><option>Plumbing</option><option>Electrical</option><option>Roofing</option><option>Paving</option><option>Painting</option><option>Lawn care</option><option>Landscaping</option><option>Tree work</option><option>Seamless gutters</option>
+          </select>
+        </div>
+        <div class="field wide"><label for="req-job">What do you need done?</label><textarea id="req-job" name="job" required></textarea></div>
+        <button type="submit">Send request</button>
+        <p class="notice wide" id="req-note" role="status" hidden></p>
+      </form>
+    </div>
+
+    <section id="members">
+      <div class="intro">
+        <span class="eyebrow">For service businesses</span>
+        <h2>More of the right calls, from people nearby</h2>
+        <p>The Alliance is built for owner-operated trades. Members share the cost and the work of bringing in customers, and send each other the jobs they don't do.</p>
+      </div>
+      <div class="grid">
+        <article><h3>Homeowner leads</h3><p>Requests that come through the Alliance go to members in the matching trade and service area.</p></article>
+        <article><h3>Trade-to-trade referrals</h3><p>The roofer who spots rotted fascia knows a gutter member. The HVAC tech who finds bad wiring knows an electrician.</p></article>
+        <article><h3>Face-to-face meetings</h3><p>Members meet in person, so a referral comes from someone who has shaken your hand.</p></article>
+        <article><h3>Shared marketing</h3><p>One name, one website and one message promoting local trades across the region.</p></article>
+      </div>
+      <dl class="facts">
+        <dt>Who can join</dt><dd>Locally owned service businesses working in the trades listed above.</dd>
+        <dt>Member standards</dt><dd><span class="todo">Licensing, insurance and conduct standards to be published</span></dd>
+        <dt>Annual dues</dt><dd><span class="todo">Dues amount to be announced</span></dd>
+        <dt>Organization</dt><dd>Piedmont Business Alliance is being organized as a nonprofit membership association in Virginia.</dd>
+      </dl>
+    </section>
+
+    <section id="area">
+      <div class="intro">
+        <span class="eyebrow">Where we work</span>
+        <h2>Serving the foothill counties</h2>
+        <p>Piedmont means the foot of the mountain: the rolling country between the Blue Ridge and the cities to the east, where the nearest good contractor is usually someone a neighbor recommends.</p>
+      </div>
+      <ul class="places">
+        <li>Culpeper</li><li>Madison</li><li>Orange</li><li>Rappahannock</li><li>Fauquier</li><li>Greene</li><li>Albemarle</li><li>Fluvanna</li><li>Louisa</li>
+      </ul>
+    </section>
+
+    <section id="meetings">
+      <div class="intro">
+        <span class="eyebrow">Meetings</span>
+        <h2>Service business owners: come to a meeting</h2>
+        <p>Guests are welcome. Bring business cards and be ready to say what work you do and where.</p>
+      </div>
+      <dl class="facts">
+        <dt>When</dt><dd><span class="todo">Meeting day and time to be announced</span></dd>
+        <dt>Where</dt><dd><span class="todo">Meeting location to be announced</span></dd>
+        <dt>Membership contact</dt><dd><span class="todo">Contact email and phone to be added</span></dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Piedmont Business Alliance. A nonprofit membership association in formation, serving the Virginia Piedmont.</p>
+  </footer>
+</div>
+<script>
+document.getElementById("req-form").addEventListener("submit", function(e){
+  e.preventDefault();
+  var note = document.getElementById("req-note");
+  var missing = Array.prototype.filter.call(this.querySelectorAll("[required]"), function(el){ return !el.value.trim(); });
+  note.hidden = false;
+  if (missing.length){ note.textContent = "Please fill in every field so a member can reach you."; missing[0].focus(); return; }
+  note.textContent = "This is a preview: the form is not connected yet, so your request was not sent.";
+});
+</script>
+</body>
+</html>
